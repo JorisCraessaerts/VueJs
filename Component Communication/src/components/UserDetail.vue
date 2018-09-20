@@ -5,6 +5,7 @@
         <p>User Name: {{ myName }}</p>
         <p>Switched Name: {{ switchName() }}</p>
         <button @click="resetName">Reset Name</button>
+        <button @click="resetFn">Reset Name With Callback</button>
     </div>
 </template>
 
@@ -16,6 +17,9 @@ export default {
         type: String,
         required: true
         //default: 'Huppeldepup'//Doesn't make sence with a required (since it would be filled anyway)
+    },
+    resetFn: {
+        type: Function
     }
   }, 
   methods: {
