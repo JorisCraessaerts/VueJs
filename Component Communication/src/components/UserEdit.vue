@@ -16,7 +16,7 @@ export default {
   methods: {
     editAge() {
       this.userAge = "22";
-      eventBus.$emit("ageWasEdited", this.userAge);
+      eventBus.changeAge(this.userAge);
     }
   }
 };
