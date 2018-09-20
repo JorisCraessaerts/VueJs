@@ -4,13 +4,14 @@
         <p>I'm an awesome User!</p>
         <button @click="changeName">Change my Name</button>
         <p>Name is: {{ name }}</p>
+        <p>City: {{ city }}</p>
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                <app-user-detail :myName="name" @nameWasReset="name = $event" :resetFn="resetName"></app-user-detail>
+                <app-user-detail :myName="name" @nameWasReset="name = $event" :resetFn="resetName" :userAge="age" :userCity="city"></app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <app-user-edit></app-user-edit>
+                <app-user-edit :userAge="age" @ageWasEdited="age = $event" :userCity="city" :editCityFn="editCity"></app-user-edit>
             </div>
         </div>
     </div>
@@ -23,7 +24,9 @@
     export default {
         data: function() {
             return {
-                name: 'Joris'
+                name: 'Joris',
+                age: 30,
+                city: 'Kortenberg',
             };
         },
         components: {
@@ -36,6 +39,9 @@
             },
             resetName() {
                 this.name = 'Joris';
+            },
+            editCity() {
+                this.city = 'Brussels';
             }
         }
     }
