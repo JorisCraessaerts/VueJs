@@ -10,19 +10,20 @@
 </template>
 
 <script>
-    export default {
-        props: ['userAge', 'userCity', 'editCityFn'],
-        methods: {
-            editAge() {
-                this.userAge = '22';
-                this.$emit('ageWasEdited', this.userAge);
-            },
-        }
+import { eventBus } from "../main.js";
+export default {
+  props: ["userAge", "userCity", "editCityFn"],
+  methods: {
+    editAge() {
+      this.userAge = "22";
+      eventBus.$emit("ageWasEdited", this.userAge);
     }
+  }
+};
 </script>
 
 <style scoped>
-    div {
-        background-color: lightgreen;
-    }
+div {
+  background-color: lightgreen;
+}
 </style>

@@ -11,7 +11,7 @@
                 <app-user-detail :myName="name" @nameWasReset="name = $event" :resetFn="resetName" :userAge="age" :userCity="city"></app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <app-user-edit :userAge="age" @ageWasEdited="age = $event" :userCity="city" :editCityFn="editCity"></app-user-edit>
+                <app-user-edit :userAge="age" :userCity="city" :editCityFn="editCity"></app-user-edit>
             </div>
         </div>
     </div>
